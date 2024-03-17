@@ -1,0 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    background-image: #a7a7a7;
+    font-family: system-ui;
+}
+
+.box{
+    width: 520px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+.input_enter{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    color: #0d9e36;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.button_calc{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 14px;
+    transition: 0.4s;
+}
+
+a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 600;
+}
+
+.button_calc:hover{
+    transition: 0.4s;
+    background-color: #fff;
+}
+
+.msg{
+    padding: 100px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    transition: 2s;
+}
+
+h1{
+    margin-bottom: 70px;
+}
+
+.sam{
+    background-image: url(https://img.freepik.com/vetores-gratis/fundo-suave-com-gradiente_23-2148970070.jpg?t=st=1710637377~exp=1710640977~hmac=d863bb4713394e3a70b43e66567916ec7c5e0251341d4ce743f9571f322cdfb8&w=1380);
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    margin-left: 350px;
+    margin-top: 95px;
+    border-radius: 40px;
+}
