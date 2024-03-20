@@ -2,74 +2,94 @@ body{
     padding: 0;
     margin: 0;
     text-decoration: none;
-    background-image: #a7a7a7;
+    background-color: #9c9c9c;
     font-family: system-ui;
-}
-
-.box{
-    width: 520px;
-    height: 700px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    margin: auto;
-    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    gap: 3rem;
+    
+    
 }
 
-.input_enter{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    color: #0d9e36;
-    height: 25px;
+.container {
+    width: 50vw;
+    min-height: 70vh;
+    max-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: #1d1d1d;
+    padding: 5rem 1rem 5rem 5rem;
     border-radius: 5px;
 }
 
-.button_calc{
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    border-radius: 14px;
-    transition: 0.4s;
+.titulo {
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  color: #9C9C9C;
 }
 
-a{
-    text-decoration: none;
+.subtituloNeg {
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  color: #FE2C0F;
+
+}
+
+.subtituloPosi {
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  color: #52ff52;
+
+}
+p {
+    color: white;
+    margin: 0;
+    margin-bottom: 6px;
+}
+input {
+    border: none;
+    width: 80%;
+    height: 25px;
+    margin-bottom: 1rem;
+}
+
+a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    width: 200px;
+    height: 25px;
+    text-decoration: none;
+    color: #1d1d1d;
+    background-color: #9c9c9c;
     font-weight: 600;
 }
-
-.button_calc:hover{
-    transition: 0.4s;
-    background-color: #fff;
+.imagem {
+    width: 70px;
+    height: 35.2px;
+    margin-right: 3rem;
 }
-
-.msg{
-    padding: 100px;
-    width: 800px;
-    height: 400px;
+.alinha {
+    
+    width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    margin: auto;
-    text-align: center;
-    transition: 2s;
-}
-
-h1{
-    margin-bottom: 70px;
-}
-
-.sam{
-    background-color: #867e7e86;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    width: 800px;
-    margin-left: 350px;
-    margin-top: 95px;
-    border-radius: 40px;
+}
+
+.imgDois {
+    width: 250px;
+    height: 500px;
+
 }

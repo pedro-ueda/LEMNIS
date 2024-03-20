@@ -3,30 +3,49 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Simulador Financeiro</title>
 </head>
 
 <body>
-  <div class="sam">
-  <div class="box">
-    <h1>Calculadora financeira LEMNIS</h1>
+  <img class="imgDois" src="./Group 7 (1) 2.png" alt="">
+ <div class="container">
+  <div class="alinha">
+  <img class="imagem" src="./Group 6.png" alt="">
+</div>
+    <h1 class="titulo">Calculadora financeira</h1>
+    <div class="alinhamento">
+      <p>Selecione um tipo de corte:</p>
+   <select id="selectionCarne">
+    <option value="Picanha">Picanha</option>
+    <option value="T-Bone">T-Bone</option>
+    <option value="Shoulder steak">Shoulder steak</option>
+    <option value="Prime rib">Prime rib</option>
+    <option value="Bife de chorizo">Bife de chorizo</option>
+    <option value="Fraldinha">Fraldinha</option>
+    <option value="Filé mignon">Filé mignon</option>
+   </select>   
 
-    <b>Insira aqui quanto você paga no KG (kilo) da carne:</b>
+    <p>Insira aqui quanto custa o quilo da sua carne </p>
     <input class="input_enter" type="text" id="ipt_precoKg" />
 
-    <b>Insira aqui quantos Kg (kilos) de carne nobre você compra por mês:</b>
+    <p>Insira aqui quantos Kg (Quilos) desse corte de carne são exportados por mês:</p>
     <input class="input_enter" type="text" id="ipt_qtdKg" />
 
-    <b>Insira aqui qual seu salário:</b>
+    <p>Insira aqui sua renda:</p>
     <input class="input_enter" type="text" id="ipt_salario" />
 
     <a href = '#div_msg' class ="button_calc" onclick="calcular()">Calcular</a>
   </div>
-</div>
+  
 
     <div class="msg" id="div_msg"></div>
+  </div>
 
 </body>
 
@@ -43,19 +62,20 @@
     var kgPorAno = (qtdKg * 12) / 2;
     var salarioAnual = salario * 12;
     var kgboi = (kgPorAno / 270);
+    var tipoCarne = selectionCarne.value
 
     if (precoPorMes > salario) {
-      div_msg.innerHTML = `<br><span style="color:red;">Você não tem lucro no seu negócio.</span>`
+      div_msg.innerHTML = `<br><h2 class="subtituloNeg">Você não tem lucro no seu negócio, Podemos te ajudar.</h2>`
     } else {
-      div_msg.innerHTML = `<br><span style="color:green;">Você tem lucro no seu negócio.</span>`
+      div_msg.innerHTML = `<br><h2 class="subtituloPosi">Você tem lucro no seu negócio, Mas pode melhorar.</h2>`
     }
 
-    div_msg.innerHTML += `<br><br> Você gasta R$${precoPorMes} por mês com carnes nobres. No ano esse valor vira R$${precoPorAno}.<br>Seu salário anual é de: R$${salarioAnual}.<br><br>`;
+    div_msg.innerHTML += `<p>Você gasta R$${precoPorMes} por mês com carnes do corte ${tipoCarne}. No ano esse valor vira R$${precoPorAno}.<br><br> Sua renda líquida mensal é: <span style="color:#52ff52;">R$${salario - precoPorMes}</span>.<br><br> Sua renda líquida anual é de: <span style="color:#52ff52;">R$${salarioAnual - precoPorAno}</span>.</p><br><br>`;
 
-    div_msg.innerHTML += ` Para um investidor no setor de carnes, a perda de 50% das carnes no transporte representa um risco significativo para o retorno do investimento, obtendo uma grande perca de dinheiro e produtos<br><br>`
+    div_msg.innerHTML += ` <p>A perda de 50% das carnes no transporte representa um risco significativo para o retorno do investimento, obtendo uma grande perda de dinheiro e produtos</p><br><br>`
 
-    div_msg.innerHTML += `Transformando essas informações em dinheiro, você investidor perde por mês R$${precoPorMes / 2}. Consequentemente, em um ano você perde R$${precoPorAno / 2}.<br><br>`;
+    div_msg.innerHTML += `<p>Transformando essas informações em dinheiro, você investidor perde por mês <span style="color:red;">R$${precoPorMes / 2}</span>. Consequentemente, em um ano você perde <span style="color:red;">R$${precoPorAno / 2}</span>.</p><br><br>`;
 
-    div_msg.innerHTML += `Em quilos, você perde ${kgPorMes}kg por mês e por ano você perde ${kgPorAno}kg, tendo em base que um boi saudável possui 270Kg, você em um ano perde em bois ${kgboi}`
+    div_msg.innerHTML += `<p>Em quilos, você perde <span style="color:red;">${kgPorMes}kg</span> por mês e por ano você perde <span style="color:red;">${kgPorAno}kg</span>, tendo em base que um boi saudável possui 270Kg.`
   }
 </script>
