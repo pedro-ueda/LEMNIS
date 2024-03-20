@@ -42,6 +42,7 @@
     var kgPorMes = qtdKg / 2;
     var kgPorAno = (qtdKg * 12) / 2;
     var salarioAnual = salario * 12;
+    var kgboi = kgPorAno / 270;
 
     if (precoPorMes > salario) {
       div_msg.innerHTML = `<br><span style="color:red;">Você não tem lucro no seu negócio.</span>`
@@ -51,10 +52,10 @@
 
     div_msg.innerHTML += `<br><br> Você gasta R$${precoPorMes} por mês com carnes nobres. No ano esse valor vira R$${precoPorAno}.<br>Seu salário anual é de: R$${salarioAnual}.<br><br>`;
 
-    div_msg.innerHTML += ` Para um investidor no setor de carnes, a perda de 50% das carnes no transporte representa um risco significativo para o retorno do investimento. Essas perdas resultam em desperdício de recursos financeiros, impactando diretamente a lucratividade do negócio. Além disso, o desperdício de carne também tem impactos ambientais, o que pode afetar a reputação da empresa diante de consumidores preocupados com sustentabilidade. Portanto, é crucial considerar estratégias para minimizar essas perdas e garantir a eficiência operacional e sustentabilidade do negócio de carnes.<br><br>`
+    div_msg.innerHTML += ` Para um investidor no setor de carnes, a perda de 50% das carnes no transporte representa um risco significativo para o retorno do investimento, obtendo uma grande perca de dinheiro e produtos<br><br>`
 
-    div_msg.innerHTML += `Transformando essas informações em dinheiro, você investidor perde por mês R$${precoPorMes / 2}. Consequentemente, em um ano você perde R$${precoPorAno / 2}.<br> Quanta coisa você poderia fazer com esse dinheiro perdido? Em quantas áreas do seu negócio você poderia estar investindo? Qual o lucro você poderia estar tendo a mais do que você tem agora?<br><br>`;
+    div_msg.innerHTML += `Transformando essas informações em dinheiro, você investidor perde por mês R$${precoPorMes / 2}. Consequentemente, em um ano você perde R$${precoPorAno / 2}.<br><br>`;
 
-    div_msg.innerHTML += `Em quilos, você perde ${kgPorMes}kg por mês e por ano você perde ${kgPorAno}kg.`
+    div_msg.innerHTML += `Em quilos, você perde ${kgPorMes}kg por mês e por ano você perde ${kgPorAno}kg, tendo em base que um boi saudável possui 270Kg, você em um ano perde em bois ${kgboi}`
   }
 </script>
