@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Lemnis</title>
+    <link rel="stylesheet" href="stylesimu.css">
+</head>
+
+<body class="fundo">
+    <h2 class="titulo">Olá, seja bem vindo ao simulador financeiro da Lemnis Imperium</h2>
+    <p class="titulo">Aqui você consegue saber quanto de <b style="color: green;">lucratividade</b> poderá ter ao
+        contratar nossos serviços</p>
+
+    <div class="pai"> Qual o nome da sua empresa?<input type="text" id="ipt_nomeEmpresa"> <br>
+        Quanto você paga no KG da carne?<input type="number" id="ipt_preco"> <br>
+        Quantos KG de carne você compra? <input type="number" id="ipt_kgCarne"> <br>
+        Qual sua renda bruta, por mês? <input type="number" id="ipt_renda"> <br>
+        <button onclick="calculo()">Analisar lucro</button> <br>
+        <div id="div_msg"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function calculo() {
+        var nomeEmpresa = Number(ipt_nomeEmpresa.value);
+        var preco = Number(ipt_preco.value);
+        var kgCarne = Number(ipt_kgCarne.value);
+        var renda = Number(ipt_renda.value);
+
+        var perdaMes = kgCarne / 2;
+        var perdaAno = perdaMes * 12;
+
+        var gasto = kgCarne * preco;
+        var gastoAno = gasto * 12;
+        var perda = renda - preco;
+        var perdaDinheiro = perda * 12;
+        var rendaLqd = (renda - perda) * 12;
+        if (renda < preco) {
+            div_msg.innerHTML = `Você está <b style="color: red;">perdendo</b> dinheiro com seu negócio, se continuar assim, em um ano você irá perder <b style="color: red;">R$${perdaDinheiro}</b>`
+        }
+        else (div_msg.innerHTML = `Você está <span style="color: green;">ganhando</span> dinheiro com seu negócio, mas pode <b>ganhar ainda mais</b>`)
+
+        div_msg.innerHTML += `<br><br> Mensalmente, o gasto com carnes é R$${gasto}. Anualmente, isso totaliza R$${gastoAno}.<br>Sua renda bruta anual é de R$${renda * 12} Sua renda liquída anual é de R$${rendaLqd}.<br><br>`;
+
+        div_msg.innerHTML += `Considerando as perdas, mensalmente, você tem um prejuízo de R$${gasto / 2}, e anualmente, R$${gastoAno / 2}.<br> Isso impacta diretamente na sua capacidade de investimento e lucratividade.<br><br>`;
+
+        div_msg.innerHTML += `Em termos de quantidade, são perdidos ${perdaMes}kg de alimentos por mês, totalizando ${perdaAno}kg ao ano.`;
+    }
+</script>
