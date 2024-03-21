@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simulador financeiro</title>
+</head>
+
+<body>
+    <h1>Lemnis calculadora financeira</h1>
+
+    <input type="number" placeholder="valor pago no kg (kilo)" id="input_precokilo">
+
+    <input type="number" placeholder="kilos comprado ao mês" id="input_kilomensal">
+
+    <input type="number" placeholder="faturamento mensal" id="input_faturamentomensal">
+
+
+    <button onclick="calcular()">calcular</button>
+
+    <div id="div_mensagem"></div>
+
+
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var valorpagokg = Number(input_precokilo.value);
+        var kilosmes = Number(input_kilomensal.value);
+        var faturamentom = Number(input_faturamentomensal.value);
+
+        var precomensal = valorpagokg * kilosmes;
+        var precoanual = precomensal * 12;
+        var faturamentoa = faturamentom * 12;
+        var kgperdidosm = kilosmes / 2;
+        var kgperdidosa = (kilosmes * 12) / 2;
+
+
+        if (precomensal > faturamentom) {
+            div_mensagem.innerHTML = `<br><span style="color:red;">Você não tem lucro no seu negócio.</span>`
+
+
+        }
+
+        else {
+            div_mensagem.innerHTML = `<br><span style="color:green;">Você tem lucro no seu negócio.</span>`
+        }
+
+        div_mensagem.innerHTML += `<br> Você gasta R$${precomensal} por mês com carnes nobres. No ano esse valor vira R$${precoanual}.<br>Seu faturamento anual é de: R$${faturamentoa}.`
+
+
+
+
+
+
+    }
+
+
+</script>
