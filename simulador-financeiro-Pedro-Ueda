@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu simulador financeiro</title>
+</head>
+
+<body>
+    <h1>Simulador financeiro Lemnis</h1>
+
+    Quanto quilos de Picanha você compra? (mês)<input type="number" id="input_picanha"> Quanto você paga no quilo da
+    Picanha?<input type="number" id="input_preco_picanha"><br>
+    Quanto quilos de Filé Mignon você compra? (mês)<input type="number" id="input_mignon"> Quanto você paga no quilo do
+    Filé Mignon?<input type="number" id="input_preco_Filé_Mignon"><br>
+    Quanto quilos de T-bone Steak você compra? (mês)<input type="number" id="input_bone"> Quanto você paga no quilo do
+    T-bone Steak?<input type="number" id="input_preco_t_bone"><br>
+    Quanto quilos de Shoulder steak você compra? (mês)<input type="number" id="input_shoulder"> Quanto você paga no quilo
+    do Shoulder steak?<input type="number" id="input_preco_shoulder"><br>
+    Quanto quilos de Prime Rib você compra? (mês)<input type="number" id="input_rib"> Quanto você paga no quilo do
+    Prime Rib?<input type="number" id="input_preco_rib"><br>
+    Quanto quilos de Bife de Chorizo você compra? (mês)<input type="number" id="input_chorizo"> Quanto você paga no quilo
+    do Bife de Chorizo?<input type="number" id="input_preco_chorizo"><br>
+    Quanto quilos de Bife Ancho você compra? (mês)<input id="input_ancho"> Quanto você paga no quilo do Bife Ancho?<input type="number" id="input_preco_ancho"><br>
+    Quanto quilos de Fraldinha você compra?(mês) <input id="input_fraldinha"> Quanto você paga no quilo da Fraldinha?<input type="number" id="input_preco_fraldinha"><br>
+    <button onclick="calcularmensal()">SIMULE AQUI SEUS DESPERDÍCIOS MENSAIS</button>
+    <button onclick="calcularanual()">SIMULE AQUI SEUS DESPERDÍCIOS ANUAIS</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function calcularmensal() {
+        var picanha = Number(input_picanha.value)
+        var FileMignon = Number(input_mignon.value)
+        var T_Bone_steak = Number(input_bone.value)
+        var shoulder = Number(input_shoulder.value)
+        var rib = Number(input_rib.value)
+        var chorizo = Number(input_chorizo.value)
+        var ancho = Number(input_ancho.value)
+        var fraldinha = Number(input_fraldinha.value)
+
+        var preco_picanha = Number(picanha * input_preco_picanha.value)
+        var preco_FileMignon = Number(FileMignon * input_preco_Filé_Mignon.value)
+        var preco_T_bone = Number(T_Bone_steak * input_preco_t_bone.value)
+        var preco_shoulder = Number(shoulder * input_preco_shoulder.value)
+        var preco_rib = Number(rib * input_preco_rib.value)
+        var preco_chorizo = Number(chorizo * input_preco_chorizo.value)
+        var preco_ancho = Number(ancho * input_preco_ancho.value)
+        var preco_fraldinha = Number(fraldinha * input_preco_fraldinha.value)
+
+        var totalmensal = Number(preco_picanha + preco_FileMignon + preco_T_bone + preco_ancho + preco_rib + preco_fraldinha + preco_shoulder + preco_chorizo)
+        var perdamensal = Number(totalmensal * 0.50)
+        var perdamensal2 = Number(totalmensal * 0.45)
+        div_mensagem.innerHTML = (`De acordo com os valores informados tem-se a estimativa de que a sua perda mensal varia de ${perdamensal2} até ${perdamensal} totalizando de 45% a 50% de perda,<br> sem essa perda o valor seria de ${totalmensal} investidos, números alarmantes e que colocam em risco o retorno do seu investimento.`)
+
+    }
+    function calcularanual() {
+        var picanha = Number(input_picanha.value)
+        var FileMignon = Number(input_mignon.value)
+        var T_Bone_steak = Number(input_bone.value)
+        var shoulder = Number(input_shoulder.value)
+        var rib = Number(input_rib.value)
+        var chorizo = Number(input_chorizo.value)
+        var ancho = Number(input_ancho.value)
+        var fraldinha = Number(input_fraldinha.value)
+
+        var preco_picanha = Number(picanha * input_preco_picanha.value) * 12
+        var preco_FileMignon = Number(FileMignon * input_preco_Filé_Mignon.value) * 12
+        var preco_T_bone = Number(T_Bone_steak * input_preco_t_bone.value) * 12
+        var preco_shoulder = Number(shoulder * input_preco_shoulder.value) * 12
+        var preco_rib = Number(rib * input_preco_rib.value) * 12
+        var preco_chorizo = Number(chorizo * input_preco_chorizo.value) * 12
+        var preco_ancho = Number(ancho * input_preco_ancho.value) * 12
+        var preco_fraldinha = Number(fraldinha * input_preco_fraldinha.value) * 12
+
+        var totalmensal = Number(preco_picanha + preco_FileMignon + preco_T_bone + preco_ancho + preco_rib + preco_fraldinha + preco_shoulder + preco_chorizo)
+        var perdamensal = Number(totalmensal * 0.50) 
+        var perdamensal2 = Number(totalmensal * 0.45) 
+      
+        div_mensagem.innerHTML = (`De acordo com os valores informados tem-se a estimativa de que a sua perda anual varia de ${perdamensal2} até ${perdamensal} totalizando de 45% a 50% de perda,<br> sem essa perda o valor seria de ${totalmensal} investidos, números alarmantes e que colocam em risco o retorno do seu investimento.`)
+
+    }
+
+</script>
