@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Financeiro</title>
+</head>
+
+<body>
+
+  <h1>Simulador Financeiro</h1>
+  Insira aqui quanto você paga no KG (kilo) da carne:
+  <input type="text" id="ipt_precoKg" /><br><br>
+
+  Insira aqui quantos Kg (kilos) de carne nobre você compra por mês:
+  <input type="text" id="ipt_qtdKg" /><br><br>
+
+  Insira aqui qual seu salário:
+  <input type="text" id="ipt_salario" /><br><br>
+
+  <button class="button" onclick="calcular()">Calcular</button>
+
+  <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+  function calcular() {
+    var precoKg = Number(ipt_precoKg.value);
+    var qtdKg = Number(ipt_qtdKg.value);
+    var precoPorMes = precoKg * qtdKg;
+    var precoPorAno = precoPorMes * 12;
+    var salario = Number(ipt_salario.value);
+    var kgPorMes = qtdKg / 2;
+    var kgPorAno = (qtdKg * 12) / 2;
+    var salarioAnual = salario * 12;
+
+    if (precoPorMes > salario) {
+      div_msg.innerHTML = `<br><span style="color:red;">Você não tem lucro no seu negócio.</span>`
+    } else {
+      div_msg.innerHTML = `<br><span style="color:green;">Você tem lucro no seu negócio.</span>`
+    }
+
+    div_msg.innerHTML += `<br><br> Você gasta R$${precoPorMes} por mês com carnes nobres. No ano esse valor vira R$${precoPorAno}.<br>Seu salário anual é de: R$${salarioAnual}.<br><br>`;
+
+    div_msg.innerHTML += ` Para um investidor no setor de carnes, a perda de 50% das carnes no transporte representa um risco significativo para o retorno do investimento. Essas perdas resultam em desperdício de recursos financeiros, impactando diretamente a lucratividade do negócio. Além disso, o desperdício de carne também tem impactos ambientais, o que pode afetar a reputação da empresa diante de consumidores preocupados com sustentabilidade. Portanto, é crucial considerar estratégias para minimizar essas perdas e garantir a eficiência operacional e sustentabilidade do negócio de carnes.<br><br>`
+
+    div_msg.innerHTML += `Transformando essas informações em dinheiro, você investidor <span style="color:red;">perde por mês R$${precoPorMes / 2}. </span> Consequentemente, em um ano <span style="color:red;">você perde R$${precoPorAno / 2}.</span><br> Quanta coisa você poderia fazer com esse dinheiro perdido? Em quantas áreas do seu negócio você poderia estar investindo? Qual o lucro você poderia estar tendo a mais do que você tem agora?<br><br>`;
+
+    div_msg.innerHTML += `Em quilos, você <span style="color:red;">perde ${kgPorMes}kg por mês</span>, e por ano <span style="color:red;">você perde ${kgPorAno}kg.</span>`
+  }
+</script>
